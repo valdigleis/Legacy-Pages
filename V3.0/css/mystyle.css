@@ -1,0 +1,416 @@
+/*
+	MIT License
+
+	Copyright (c) 2021 Valdigleis
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+*/
+
+
+
+
+/*
+	Author: Valdigleis S Costa (valdigleis@gmail.com)
+	Data: 04/05/2021
+	Version: 1.0
+*/
+
+
+
+/* =====================================================================
+						Resetar as configurações básicas
+   =====================================================================*/
+
+* {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+/* =====================================================================
+						Configurações básicas
+   =====================================================================*/
+
+/* formatação da tag body */
+body {
+	/* Cor de fundo */
+	background-color: #F8F4E7;
+	/* Fontes usadas */
+	font-family:'Open Sans', Helvetica, Verdana, sans-serif;
+	/* Cor da fonte */
+	color:#000000;
+	/* Altura */
+	height:100%;
+}
+
+
+/* Configurando a tag section */
+section {
+	/* Margem superior/inferior e esquerda e direita */
+	margin: 5px auto;
+	/* Largura máxima */
+	max-width: 1000px
+}
+
+/* Configurando os a tag p dentro da tag section */
+section p {
+	/* Ditancia entre as linhas de um paragrafo */
+	line-height: 32px;
+	/* Espaçamento entre as letras */
+	letter-spacing: .2rem;
+	/* Margem esquerda */
+	margin-left: 30px;
+	/*Margem direita */
+	margin-right: 30px;
+	/* Margem inferior */
+	margin-bottom: 3px;
+	/* Margem superior */
+	margin-top: 3px;
+	/* Alinhamento do texto */
+	text-align: justify;
+}
+
+
+section div {
+	/* Ditancia entre as linhas de um paragrafo */
+	line-height: 20px;
+	/* Espaçamento entre as letras */
+	letter-spacing: .2rem;
+	/* Margem esquerda */
+	margin-left: 30px;
+	/*Margem direita */
+	margin-right: 30px;
+	/* Margem inferior */
+	margin-bottom: 3px;
+	/* Margem superior */
+	margin-top: 3px;
+	/* Alinhamento do texto */
+	text-align: center;
+}
+
+/* Formatação para os links: Não visitado, visitado, hover do mouse e clicado */
+a:link {
+	/* Cor do link */
+	color:#4B2EDE;
+	text-decoration:none;
+}
+
+a:visited {
+	/* Cor do link */
+	color:#4B2EDE;
+	/* Decoração do texto */
+	text-decoration:none;
+}
+
+a:hover {
+	/* Cor do link */
+	color:#9D90DC;
+	/* Decoração do texto */
+	text-decoration:none;
+}
+
+a:active {
+	/* Cor do link */
+	color:#FFA04D;
+	/* Decoração do texto */
+	text-decoration:none;
+}
+
+a.lightlink {
+	/* Cor do link */
+	color:#9D90DC;
+	/* Decoração do texto */
+	text-decoration:none;
+}
+
+
+h2 {
+	/* Define o padding */
+    padding: 0px;
+    /* Alinhamento do texto */
+    text-align: justify;
+    /* Tamanho da fonte */
+    font-size: 25px;
+    /* Margem esquerda */
+	margin-left: 30px;
+	/*Margem direita */
+	margin-right: 30px;
+	/* Margem inferior */
+	margin-bottom: 3px;
+	/* Margem superior */
+	margin-top: 5px;
+	/* Borda inferior */
+	border-bottom: 1px solid #DDDDDD;
+    /*box-shadow: inset 0px 0px 2px 0px #F8F4E7;*/
+}
+
+
+/* =====================================================================
+						Configurações de ID's
+   =====================================================================*/
+#field {
+	/* Posição do elemento */
+	position: relative;
+	/* Altura mínima */
+	min-height: 100vh;
+	/* Espaço da margem direita */
+	margin-right:auto;
+	/* Espaço da margem esquerda */
+	margin-left:auto;
+}
+
+#name {
+	/* Alinhamento do texto */
+	text-align:center;
+	/* Tamanho da fonte */
+	font-size: 32px;
+	/* Espaço da margem superior */
+  	margin-top:30px;
+  	/* Espaço da margem inferior */
+  	margin-bottom:20px;
+}
+
+#name a {
+	/* Cor do link */
+  	color:#444444;
+  	/* Decoração do texto */
+  	text-decoration:none;
+  	/* Espaçamento entre as letras */
+  	letter-spacing: 3px;
+}
+
+#navdiv {
+	/* Espaço da margem esquerda */
+  	margin-left:auto;
+  	/* Espaço da margem direita */
+  	margin-right:auto;
+  	/* Largura */
+  	width:100%;
+  	/* Borda superior com um linha de 1 pixel e cor #dddddd */
+  	border-top:solid 1px #DDDDDD;
+  	/* Borda inferior com um linha de 1 pixel e cor #dddddd */
+  	border-bottom:solid 1px #DDDDDD;
+  	/* Cor do texto */
+  	color:#4B2EDE;
+  	/* Padding superior */
+  	padding-top:10px;
+  	/* Padding inferior */
+  	padding-bottom:10px;
+  	/* Margem inferior */
+  	margin-bottom:20px;
+}
+
+#navdiv a {
+	/* padding superior/inferior e esquerdo/direito */
+  	padding: .2em 0.3em;
+  	/* Tamanho da fonte */
+  	font-size:18px;
+}
+
+#navdiv a:hover {
+	/* cor do texto */
+  	color: #000000;
+}
+
+#navdiv ul {
+	/* Margens */
+  	margin:0;
+  	/*Paddings */
+  	padding:0;
+  	/* estilo de sinalização inserida nas listas */
+  	list-style:none;
+  	/* alinhamento do texto */
+  	text-align:center;
+}
+
+#navdiv ul li {
+	/* modo de exibição */
+  	display:inline;
+}
+
+#footerdiv {
+	/* Espaço da margem esquerda */
+  	margin-left:auto;
+  	/* Espaço da margem direita */
+  	margin-right:auto;
+  	/* Largura */
+  	width:100%;
+  	/* Borda superior com um linha de 1 pixel e cor #dddddd */
+  	border-top:solid 1px #DDDDDD;
+  	/* Borda inferior com um linha de 1 pixel e cor #dddddd */
+  	border-bottom:solid 1px #DDDDDD;
+  	/* Cor do texto */
+  	color:#4B2EDE;
+  	/* Padding superior */
+  	padding-top:10px;
+  	/* Padding inferior */
+  	padding-bottom:10px;
+  	/* Margem inferior */
+  	margin-bottom:20px;
+  	/* alinhamento do texto */
+  	text-align:center;
+}
+
+#photocentral {
+	/* Espaço da margem esquerda */
+  	margin-left:auto;
+  	/* Espaço da margem direita */
+  	margin-right:auto;
+  	/* Tipo da exibição */
+  	display: flex;
+  	/* Alinhamento dos itens */
+    align-items: center;
+    /* ALinhamento do conteúdo */
+    justify-content: center;
+    /* Margem superior */
+    margin-top: 10px;
+}
+
+#aviso {
+	color: red; 
+}
+
+#contact {
+  	width:100%;
+  	margin-top:10px;
+  	margin-bottom: 10px;
+  	/* Espaço da margem esquerda */
+	margin-left:auto;
+	/* Espaço da margem direita */
+	margin-right:auto;
+  	font-size: 15px;
+}
+
+
+#book {
+	/* Ditancia entre as linhas de um paragrafo */
+	line-height: 32px;
+	/* Espaçamento entre as letras */
+	letter-spacing: .2rem;
+	/* Margem esquerda */
+	margin-left: 30px;
+	/*Margem direita */
+	margin-right: 30px;
+	/* Margem inferior */
+	margin-bottom: 3px;
+	/* Margem superior */
+	margin-top: 3px;
+	/* Padding */
+	padding: 0px 30px;
+	/* Alinhamento do texto */
+	text-align: justify;
+}
+
+
+#dum {
+	/* As margens  */
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 3px;
+	margin-bottom: 0px;
+	/* O alinhamento do texto  */
+	text-align: right;
+	/* Padding superior */
+  	padding-top:0px;
+  	/* Padding inferior */
+  	padding-bottom:10px;
+  	/* Margem inferior */
+  	margin-bottom:0px;
+  	/* alinhamento do texto */
+}
+
+/* =====================================================================
+						Configurações de classe
+   =====================================================================*/
+.photoperfil {
+	/* Raio da borda */
+	/*border-radius: 150px;*/
+	border-radius: 30px;
+	/* Borda de 8 pixels solida de cor branca */
+	border: 4px solid #ffffff;
+	/* Largura */
+	/*width: 200px; */
+	width: 15%;
+	/* Altura */
+    /*height: 200px;*/
+    /* tool kit para a caixa de sombra */
+    -webkit-box-shadown: 0 0 20px rgba(48, 46, 77, 0.15);
+    /* configuração da caixa de sombra */
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+
+.network {
+	/* Margem superior  */
+    margin-top: 15px;
+    /* Margem inferior */
+    margin-bottom: : 15px;
+}
+
+.network a {
+	/* Altura */
+    height: 45px;
+    /* Largura */
+    width: 45px;
+    /* Modo de exibição */
+    display: inline-block;
+    /* Margem superior/inferior esquerda/direita*/
+    margin: 0 5px;
+    /* raio da borda */
+    border-radius: 50%;
+    /* Decoração do texto */
+    text-decoration: none;
+    /* Alinhamento do texto */
+    text-align: center;
+    /* Margem inferior/superior esquerda/direita */
+    margin: 0 5px;
+    /* toolkit para transformação */
+    -webkit-transition: all 0.3 easy; 
+    /* Configurando a transformação */
+    transition: all 0.3 easy; 
+}
+
+.network a:hover {
+	/* toolkit para transformação em escala */
+    -webkit-transform: scale(1.5);
+    /* Configurando a transformação */
+    transform: scale(1.5);
+}
+
+
+.coursetitles {
+	/* O estilo da fonte */
+    font-style:oblique;
+}
+
+
+.twocollist {
+	/* Número de colunas */
+    columns:2;
+    /* Tool kits para duas colunas */
+    -webkit-columns:2;
+    -moz-columns:2;
+    column-gap:4em;
+    -webkit-column-gap:4em;
+    -moz-column-gap:4em;
+}
