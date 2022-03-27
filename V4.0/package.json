@@ -1,0 +1,38 @@
+{
+  "name": "page",
+  "version": "1.0.0",
+  "description": "Minha página pessoal",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valdigleis/Page.git"
+  },
+  "keywords": [
+    "HTML",
+    "Personal",
+    "Page"
+  ],
+  "author": "valdigleis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valdigleis/Page/issues"
+  },
+  "homepage": "https://profvaldi.site",
+  "dependencies": {
+    "@jscoq/elpi": "^0.13.3",
+    "@jscoq/equations": "^0.13.3",
+    "@jscoq/extlib": "^0.13.3",
+    "@jscoq/hahn": "^0.13.3",
+    "@jscoq/mathcomp": "^0.13.3",
+    "@jscoq/paco": "^0.13.3",
+    "@jscoq/promising": "^0.13.3",
+    "@jscoq/quickchick": "^0.13.3",
+    "@jscoq/simpleio": "^0.13.3",
+    "@jscoq/snu-sflib": "^0.13.3",
+    "@jscoq/software-foundations": "^0.13.3",
+    "jscoq": "^0.13.3"
+  }
+}

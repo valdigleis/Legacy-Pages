@@ -1,0 +1,695 @@
+<!--
+	MIT License
+
+	Copyright (c) 2021 Valdigleis
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE. 
+-->
+<!DOCTYPE html>
+<html lang=”pt-br”>
+
+	<head>
+		<!-- Basic Page infos -->
+		<meta charset="utf-8">
+		<title>CCMP0164</title>
+		
+		<meta name="description" content="Profº Valdigleis S Costa's home page.">
+		<meta name="author" content="Valdigleis S Costa">
+
+		<!-- Mobile Specific Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Import font -->
+		<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
+		<!-- Import font -->
+		<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../../css/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/ico" href="../../images/favicon.ico">
+
+		<!-- Funções usadas na exibição da data de última modificação -->
+		<script type="text/JavaScript" language="JavaScript">
+			
+			function construir_data(date){
+				var d = date.getDate();
+				var m = date.getMonth() + 1;
+				var y = date.getYear();
+
+				var mmm = 
+				(1==m)?'Janeiro':( 2==m)?'Fev':(3==m)?'Mar':
+				(4==m)?'Abr':( 5==m)?'Mai':(6==m)?'Jun':
+				(7==m)?'Jul':( 8==m)?'Ago':(9==m)?'Set':
+				(10==m)?'Out':(11==m)?'Nov':'Dezembro';
+
+				return "" + (d<10?"0"+d:d) + " de " + mmm + " de " +  (2000+y-100);
+			}
+
+			function getDataModificacao(){
+				var lmd = document.lastModified;
+				var s = "Desconhecida";
+				var d1;
+				if(0 != (d1=Date.parse(lmd))){
+					s = "" + construir_data(new Date(d1));
+				}
+				return s;
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- Cabeçalho -->
+		<div class="container header" id="header">
+			<div class="row">
+				<div id="info" class="nine columns">
+					<h1><strong>CCMP0164 &ndash; 2021.1</strong></h1>
+					<h5>Análise de Algoritmos</h5>
+					<span>Turma: T1</span><br>
+					<span>Professor: <a href="http://www.profvaldi.site/">Profº Valdigleis</a></span><br>
+					<span>Seção 01: Segunda-feira 02:00&ndash;04:00pm no <em>Google Meet.</em></span><br>
+					<span>Seção 02: Quarta-feira 02:00&ndash;04:00pm no <em>Google Meet.</em></span>
+				</div>
+				<div id="links" class="three columns">
+					<h3><a href="../../index.html">Página Inicial</a></h3>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- Conteúdo -->
+		<div class="container" id="content">
+			<!-- A ementa do curso -->
+			<div class="row">
+				<div class="six columns">
+					<h5>Ementa do curso</h5>
+					<blockquote>
+						<p style="text-align:justify;">Medidas de custo de algoritmos. Comportamento assintótico de funções, análise de recorrência, notações assintóticas e variações. Análise de melhor caso, pior caso e caso médio. Introdução à Complexidade de Algoritmos, Algoritmos Não Determinísticos, Classes NP-Difícil e NP-Completo. Diferença entre Decidibilidade e Complexidade. Heurísticas e Algoritmos Aproximados Algoritmos Exponenciais usando tentativa e erro, Heurísticas para Problemas NP-Completo, Algoritmos Aproximados para Problemas NP-Completo.</p>
+					</blockquote>
+					<h5>Pré-requisitos</h5>
+					<blockquote>
+						<p>Algoritmos e Estruturas de Dados I (CCMP0150)</p>
+						<p>Lógica Clássica Para Computação (CCMP0142)</p>
+						<p>Cálculo Diferencial e Integral I (CCMP0130)</p>
+					</blockquote>
+				</div>
+				<div class="six columns">
+					<h5>Referências Bibliográficas</h5>
+					<ul>
+						<li><a href="https://www.google.com.br/books/edition/Estruturas_de_dados_e_seus_algoritmos_3a/_Jh_swEACAAJ?hl=pt-BR" target="_blank">SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de Dados e seus Algoritmos. Livros Técnicos e Científicos, 1994.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Algoritmos/6iA4LgEACAAJ?hl=pt-BR" target="_blank">CORMEN, Thomas H., RIVEST, Charles E., LEISERSON, Ronald L., STEIN, Clifford. Algoritmos: Teoria e Prática. 3ª Edição, Elsevier, 2012.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Projeto_de_algoritmos/sNBlMgAACAAJ?hl=pt-BR">ZIVIANI, Nivio. Projeto de Algoritmos – com Implementação em Java e C++. Cengage Learning, 2011.</a></li>
+						<li>DASGUPTA, Sanjoy, PAPADIMITRIOU, Christos, VAZIRANI, Umesh. Algoritmos. McGrawHill/Artmed, 2009.</li>
+					</ul>
+					<h5>Referências Complementares</h5>
+					<ul>
+						<li><a href="https://www.google.com.br/books/edition/GRAFOS/cyrtyQEACAAJ?hl=pt-BR" target="_blank">GOLBARG, Marco, GOLDBARG, Elizabeth. Grafos – Conceitos, Algoritmos e Aplicações. Elsevier, 2012.</a></li>
+						<li>ASCENCIO, Ana F. G., ARAÚJO, Graziela S. Estruturas de Dados – Algoritmos, Análise da Complexidade e Implementações em Java e C/C++. Pearson Education do Brasil, 2010.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="twelve columns">
+					<table class="selected">
+						<thead><th>Nº</th><th>Observações</th></thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td style="text-align: justify;">
+									Além das referências complementares apresentadas acima também está disponível as notas de aula do Profº Valdigleis compiladas na forma de um único manuscrito, que pode ser obtido de duas formas: via <a style="cursor: s-resize;" href="../../files/Livro-FMC.pdf">pdf</a>  ou (mais recomendado) através de clone do repositório <a href="https://github.com/valdigleis/Livro-FMC" target="_blank">git</a>.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Descrição das aulas -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Encontros (Aulas)</strong></h4>
+					<div class="eleven columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Data</th><th>Tópicos</th><th>Sala</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										24/11
+									</td>
+									<td>
+										Apresentação da Disciplina
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										2
+									</td>
+									<td>
+										29/11
+									</td>
+									<td>
+										Revisão matemática: somas, somatórios e propriedades das somas.
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>
+										3
+									</td>
+									<td>
+										01/12
+									</td>
+									<td>
+										Revisão matemática: relações de recorrência.
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										4
+									</td>
+									<td>
+										06/12
+									</td>
+									<td>
+										Introdução às medidas de Custo dos Algoritmos e a Notação assintótica.
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										5
+									</td>
+									<td>
+										08/12
+									</td>
+									<td>
+										Teoria da Análise Assintótica
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										6
+									</td>
+									<td>
+										13/12
+									</td>
+									<td>
+										Análise de Algoritmos (Parte 1)
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										7
+									</td>
+									<td>
+										15/12
+									</td>
+									<td>
+										Análise de Algoritmos (Parte 2)
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										8
+									</td>
+									<td>
+										20/12
+									</td>
+									<td>
+										Complexidade de busca e o "Teorema Mestre"
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										9
+									</td>
+									<td>
+										22/12
+									</td>
+									<td>
+										Complexidade de ordenação
+									</td>
+									<td>
+										<a href="https://meet.google.com/xwx-ydmw-oad" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										10
+									</td>
+									<td>
+										10/01
+									</td>
+									<td>
+										Algoritmos Aleatórios
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										11
+									</td>
+									<td>
+										12/01
+									</td>
+									<td>
+										Corretude de algoritmos (1)
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										12
+									</td>
+									<td>
+										17/01
+									</td>
+									<td>
+										Corretude de algoritmos (2)
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										13
+									</td>
+									<td>
+										19/01
+									</td>
+									<td>
+										Introdução à Computabilidade e a Decidibilidade.
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										14
+									</td>
+									<td>
+										24/01
+									</td>
+									<td>
+										Classes de complexidade de problemas (1)
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										15
+									</td>
+									<td>
+										26/01
+									</td>
+									<td>
+										Classes de complexidade de problemas (2)
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										16
+									</td>
+									<td>
+										31/01
+									</td>
+									<td>
+										Classe NP-Completo e Reduções
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										17
+									</td>
+									<td>
+										02/02
+									</td>
+									<td>
+										Classe NP-Completo e Algoritmos Aproximados.
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										18
+									</td>
+									<td>
+										07/02
+									</td>
+									<td>
+										Análise Amortizada
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										19
+									</td>
+									<td>
+										09/02
+									</td>
+									<td>
+										Primeira atividade Avaliativa
+									</td>
+									<td>
+										<em>E-mail</em> 
+									</td>
+									<td><em>Deadline</em> da atividade</td>
+								</tr>
+
+								<tr>
+									<td>
+										20
+									</td>
+									<td>
+										14/02
+									</td>
+									<td>
+										Algoritmos exponenciais de tentativa e erro (força bruta)
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										21
+									</td>
+									<td>
+										16/02
+									</td>
+									<td>
+										Heurísticas e Algoritmos (1) Métodos Gulosos
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										22
+									</td>
+									<td>
+										21/02
+									</td>
+									<td>
+										Heurísticas e Algoritmos (2) Métodos Dinâmicos
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										23
+									</td>
+									<td>
+										23/02
+									</td>
+									<td>
+										Heurísticas e Algoritmos (3) Programação Linear
+									</td>
+									<td>
+										<a href="https://meet.google.com/gdm-jbus-oiu" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										24
+									</td>
+									<td>
+										07/03
+									</td>
+									<td>
+										Algoritmos e grafos (1) Algoritmos elementares
+									</td>
+									<td>
+										<a href="https://meet.google.com/bbe-snpe-dug" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										25
+									</td>
+									<td>
+										09/03
+									</td>
+									<td>
+										Algoritmos e grafos (2) Caminhos
+									</td>
+									<td>
+										<a href="https://meet.google.com/bbe-snpe-dug" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										26
+									</td>
+									<td>
+										14/03
+									</td>
+									<td>
+										Algoritmos e grafos (3) Algoritmos de Fluxo
+									</td>
+									<td>
+										<a href="https://meet.google.com/bbe-snpe-dug" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										27
+									</td>
+									<td>
+										16/03
+									</td>
+									<td>
+										Geometria Computacional
+									</td>
+									<td>
+										<a href="https://meet.google.com/bbe-snpe-dug" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										28
+									</td>
+									<td>
+										21/03
+									</td>
+									<td>
+										Algoritmos e Complexidade Quântica (1)
+									</td>
+									<td>
+										<a href="https://meet.google.com/bbe-snpe-dug" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										29
+									</td>
+									<td>
+										23/03
+									</td>
+									<td>
+										Algoritmos e Complexidade Quântica (2)
+									</td>
+									<td>
+										<a href="https://meet.google.com/bbe-snpe-dug" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										30
+									</td>
+									<td>
+										28/03
+									</td>
+									<td>
+										Segunda atividade Avaliativa
+									</td>
+									<td>
+										<em>E-mail</em> 
+									</td>
+									<td><em>Deadline</em> da atividade</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Descrição das atividades -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Atividades</strong></h4>
+					<div class="eleven columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Posted</th><th>Deadline</th><th>Tópicos</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										dd/mm
+									</td>
+									<td>
+										dd/mm
+									</td>
+									<td>
+										---
+									</td>
+									<td>
+										---
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<hr/>
+
+	<!-- Rodapé da página-->
+	<div class="container">
+		<div class="row">
+			<p style="align-items: center; text-align: center;">
+				Copyright © 2021 Profº Valdigleis S. Costa <br> 
+				<strong> 
+					<script type="text/JavaScript" language="JavaScript">
+						document.write("Atualizado em: " + getDataModificacao());
+					</script>
+				</strong> 
+			</p>
+		</div>
+	</div>
+</html>

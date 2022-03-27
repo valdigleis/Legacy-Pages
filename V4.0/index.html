@@ -1,0 +1,390 @@
+<!--
+	MIT License
+
+	Copyright (c) 2021 Valdigleis.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE. 
+-->
+<!DOCTYPE html>
+<html lang=”pt-br”>
+<head>
+	<!-- Basic Page infos -->
+	<meta charset="utf-8">
+	<title>Profº Valdigleis</title>
+	
+	<meta name="description" content="Profº Valdigleis S Costa's home page.">
+	<meta name="author" content="Valdigleis S Costa">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Import font -->
+	<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
+	<!-- Import font -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/academicons/css/academicons.min.css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/ico" href="images/favicon.ico">
+
+
+	<!-- Funções usadas na exibição da data de última modificação -->
+	<script type="text/JavaScript" language="JavaScript">
+		
+		function construir_data(date){
+			var d = date.getDate();
+			var m = date.getMonth() + 1;
+			var y = date.getYear();
+
+			var mmm = 
+			(1==m)?'Janeiro':( 2==m)?'Fev':(3==m)?'Mar':
+			(4==m)?'Abr':( 5==m)?'Mai':(6==m)?'Jun':
+			(7==m)?'Jul':( 8==m)?'Ago':(9==m)?'Set':
+			(10==m)?'Out':(11==m)?'Nov':'Dezembro';
+
+			return "" + (d<10?"0"+d:d) + " de " + mmm + " de " +  (2000+y-100);
+		}
+
+		function getDataModificacao(){
+			var lmd = document.lastModified;
+			var s = "Desconhecida";
+			var d1;
+			if(0 != (d1=Date.parse(lmd))){
+				s = "" + construir_data(new Date(d1));
+			}
+			return s;
+		}
+	</script>
+</head>
+<body>
+
+	<div class="container header coordinates">
+
+		<!-- Cabeçalho da main page -->
+		<div class="row">
+			<div class="six columns info">
+				<br>
+				<br>
+				<h1>Valdigleis S. Costa</h1>
+				<h5>
+		          <span>Professor Adjunto (A-2)</span>
+		          <span>Colegiado de Ciência da Computação</span>
+		          <span>UNIVASF - <em>Campus</em> Salgueiro (PE) - Brasil</span>
+		        </h5>
+			</div>
+			<img class="three columns u-max-full-width headshot" alt="Uma foto minha, Valdigleis S Costa" src="images/Foto.png" />
+			<div class="three columns">
+				<br>
+				<br>
+		        <div><strong>Endereço</strong>: Bairro Nossa Senhora das Graças, Rua Antônio Figueira, 134, Salgueiro, 56000-000, Brasil.</div>
+		        <div><strong>Telegram</strong>: @Valdigleis</div>
+		        <div><strong>Zoom</strong>: <a href="https://zoom.us/j/6212713605">621-271-3605</a></div>
+		        <div><a href="mailto:valdigleis.costa@univasf.edu.br" class="email">valdigleis.costa@univasf.edu.br</a></div>
+		      </div>
+		</div>
+
+		<!-- Menu de opções de link na main page -->
+		<div class="row">
+			<div class="twelve columns links">
+
+				<!--
+				<a href="https://profvaldi.site/blog" target="_blank" title="Blog">
+					<i class="fa fa-wordpress fa-2x"></i>
+				</a>
+				
+				<a  href="https://twitter.com/valdigleis" target="_blank" title="Twitter">
+	            	<i class="fa fa-twitter fa-2x"></i>
+	         	</a>
+				
+	         	
+	         	<a href="">
+	         		<i class="fa fa-discord fa-2x"></i>
+	         	</a>
+				-->
+	         	
+	         	<a  href="https://youtube.com/valdigleis" target="_blank" title="YouTube">
+	            	<i class="fa fa-youtube fa-2x"></i>
+	         	</a>
+
+	         	<a href="https://open.spotify.com/user/valdigleis?si=fd96f0ae913342b9" target="_blank" title="Spotify">
+                    <i class="fa fa-spotify fa-2x"></i>
+                </a>
+
+	         	<a href="https://github.com/valdigleis" target="_blank" title="Github">
+                    <i class="fa fa-github fa-2x"></i>
+                </a>
+
+                <a href="https://scholar.google.com/citations?user=RRm81pYAAAAJ" target="_blank" title="Google Acadêmico">
+                    <i class="ai ai-google-scholar ai-2x"></i>
+                </a>
+
+	         	<a href=" https://orcid.org/0000-0001-8738-5836" target="_blank" title="Orcid">
+	            	<i class="ai ai-orcid ai-2x"></i>
+	          	</a>
+
+	         	<a href="https://dblp.org/pid/175/1726.html" target="_blank" title="DBLP">
+	            	<i class="ai ai-dblp ai-2x"></i>
+	          	</a>
+			</div>
+		</div>
+
+	</div>
+
+	<hr />
+
+	<!-- Aqui está a parte do texto sobre mim -->
+	<div class="container statement">
+		<div class="row">
+			<div class="eight columns offset-by-two columns">
+				<p style="text-align: justify;">
+					Nascido no estado da Paraíba-Brasil, e criado no estado vizinho do Rio Grande do Norte, sou um Cientista da Computação por formação, mas um matemático por natureza (meu número de Erdös é 4). Sou professor adjunto no <a href="https://portais.univasf.edu.br/ccicomp" target="_blank">CCICOMP</a> da <a href="https://portais.univasf.edu.br/" target="_blank">UNIVASF</a> desde 2019. Obtive meus títulos de Doutor e Mestre pelo <a href="https://sigaa.ufrn.br/sigaa/public/programa/portal.jsf?id=73" target="_blank">PPgSC</a> da <a href="https://www.ufrn.br" target="_blank">UFRN</a> sob a tutela dos professores  <a href="https://lattes.cnpq.br/4601263005352005" target="_blank">Benjamin René Callejas Bedregal</a> e <a href="https://lattes.cnpq.br/7536988783793885" target="_blank">Regivan Hugo Nunes Santiago</a>.  Antes disso, obtive o grau de bacharel em Sistemas de Informação pelo <a href="https://dceti.angicos.ufersa.edu.br/" target="_blank">DCETI</a>.
+				</p>
+				<p style="text-align: justify;">
+                	Meus interesses de ensino e pesquisa estão focados nas áreas de <strong>Fundamentos Matemáticos da Computação</strong> e <strong>Matemática Aplicada</strong>. Enquanto um fundamentalista, sou atraido pelos tópicos: <em>Lógica, Álgebra, Computabilidade, Complexidade, Especificações Formais e Teoria das Categorias</em>. Por outro lado, como um matemático aplicado meus interesses se concentram nos tópicos: <em>Processamento Digital de Imagens e Sinais, Bioinformática, Aprendizado de Máquina e Criptografia</em>.
+                </p>
+                <p style="text-align: justify;">
+                	Fora do universo acadêmico tenho diversos interesses e <em>hobbies</em>, dos quais costumo destacar (<strong id="aviso">sem qualquer ordem de preferência</strong>): Literatura, música japonesa e instrumental, RPG, vídeogames, preparar e apreciar um bom café, programar computadores, ciclismo amador, estudar idiomas, assistir futebol e jogar xadrez.
+                </p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Aqui é detalhado de forma resumida as turmas que leciono atualmente -->
+	<div class="container work">
+		<div class="row">
+			<div class="eight columns offset-by-two columns">
+				<h4 style="text-align:center;">Cursos Atuais</h4>
+				<hr />
+				<!-- Informações resumidas dos cursos -->
+				<table class="selected">
+					<thead><th>Curso</th><th>Turma</th><th>Dia</th><th>Horário (UTC&ndash;3)</th><th>Sala/Local</th><th>Tipo</th></thead>
+					<tbody>
+						<!-- Aqui faz a listagem em si das disciplinas -->
+						<tr>
+							<td>
+				                <a href="classroom/20211/CCMP0161.html">CCMP0161</a>
+				            </td>
+				            <td>T1</td>
+				            <td>
+				            	<em>Segunda-feira</em> 
+				            	<br>
+				            	<em>Quarta-Feira</em>
+				            </td>
+				            <td>
+				            	08:00&ndash;10:00am
+				            	<br>
+				            	08:00&ndash;10:00am
+				            </td>
+				            <td>
+				            	Meet
+				            </td>
+				            <td>
+				            	Graduação
+				            </td>
+						</tr>
+
+						<tr>
+							<td>
+				                <a href="classroom/20211/CCMP0164.html">CCMP0164</a>
+				            </td>
+				            <td>T1</td>
+				            <td>
+				            	<em>Segunda-feira</em> 
+				            	<br>
+				            	<em>Quarta-Feira</em>
+				            </td>
+				            <td>
+				            	02:00&ndash;04:00pm
+				            	<br>
+				            	02:00&ndash;04:00pm
+				            </td>
+				            <td>
+				            	Meet
+				            </td>
+				            <td>
+				            	Graduação
+				            </td>
+						</tr>
+					</tbody>
+				</table>
+				<p style="text-align: left;padding: 0px; margin-top: 0px;">
+					Meus horários de trabalho podem ser consultados em detalhes clicando <a href="">aqui</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Aqui é detalhado de forma resumida as turmas que lecionei, coisa que recomendo e minha publicações -->
+	<div class="container work">
+		<div class="row u-clear-bottom">
+
+			<!-- Coluna dos cursos já ministrados -->
+			<div class="five columns">
+				<h4>Cursos Recentes</h4>
+				<hr />
+				<!-- A tabela dos cursos -->
+				<table class="selected">
+					<thead><th>Período</th><th>Curso</th></thead>
+					<tbody>
+						<!-- Aqui faz a listagem em si das disciplinas -->
+						<tr>
+							<td>2020.2</td>
+							<td>
+								<a href="classroom/20202/CCMP0133.html">CCMP0133</a>
+							</td>
+						</tr>
+						<tr>
+							<td>2020.1</td>
+							<td>
+				                <a href="classroom/20201/CCMP0142.html">CCMP0142</a> (Parceria com a <a href="http://lattes.cnpq.br/7398012565477976" target="_blank">Profª Débora</a>)
+				            </td>
+						</tr>
+						<tr>
+							<td>2019.1</td>
+							<td>
+				                CCMP0133
+				            </td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h5>Coisas que recomendo</h5>
+		        <ul>
+		        	<li><a href="https://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a> (Coleção de Livros).</li>
+		          	<li><a href="https://softwarefoundations.cis.upenn.edu/">Software
+		              Foundations</a> (Coleção de Livros Digitais).</li>
+		            <li><a href="https://ctan.org/" target="_blank">TeX</a> (Distribuições <a href="http://www.tug.org/mactex/" target="_blank">MacTeX</a> e <a href="https://www.tug.org/texlive/" target="_blank">TeXLive</a>).</li>
+		            <li><a href="https://www.debian.org/index.pt.html" target="_blank">Debian</a>  e <a href="https://pt.wikipedia.org/wiki/MacOS" target="_blank">Mac OS x</a> (Sistemas operacionais).</li>
+		            <li>Os ambientes gráficos <a href="https://www.xfce.org/">XFCE</a> e <a href="https://br.gnome.org/">Gnome</a>.</li>
+		            <li>As Linguagens de programação: <a href="https://ocaml.org/" target="_blank">OCaml</a>, <a href="https://www.haskell.org/" target="_blank">Haskell</a>, <a href="https://pt.wikipedia.org/wiki/Prolog" target="_blank">Prolog</a> (especificamente <a href="http://www.gprolog.org/" target="_blank">GNU Prolog</a>), e por fim, C/C++.</li>
+		            <li>Editor de texto <a href="https://code.visualstudio.com" target="_blank">Visual Code</a>.</li>
+		            <li><a href="https://www.youtube.com/user/numberphile" target="_blank"><em>Numberphile</a></em> e <a href="https://www.youtube.com/c/FabioAkita1990" target="_blank">Fábio Akita</a> (Canais de YouTube).</li>
+		            <li>Torcer pelo <a href="https://www.flamengo.com.br" target="_blank">Flamengo</a>.</li>
+		            <li>As tirinhas dos sites: <a href="https://abstrusegoose.com/" target="_blank">Abstruse Goose</a>, <a href="https://xkcd.com/">XKCD</a>, <a href="https://phdcomics.com/">Phd Comics</a> e <a href="https://hacktoon.com/" target="_blank">Hacktoon</a>.</li>
+		        </ul>
+			</div>
+
+			<!-- Coluna dos trabalhos de pesquisa -->
+			<div class="seven columns">
+				<h4>Publicações</h4>
+				<hr/>
+				<h5><em>Trabalhos de Titulação</em></h5>
+				<table class="selected">
+					<thead>
+			            <tr>
+			            	<th>Grau</th>
+			              	<th>Titulo</th>
+			              	<th>Defesa</th>
+			            </tr>
+			        </thead>
+			        <tr>
+			        	<td>Doutorado</td>
+			            <td>
+			              <a style="cursor: s-resize;" href="https://repositorio.ufrn.br/jspui/bitstream/123456789/31921/1/Automatosfuzzyhesitantes_Costa_2020.pdf" target="_blank">Autômatos <em>Fuzzy</em> Hesitante Típicos: Teoria e Aplicações</a>
+			            </td>
+			            <td>08 Dez. 2020</td>
+		          	</tr>
+		          	<tr>
+			        	<td>Mestrado</td>
+			            <td>
+			              <a style="cursor: s-resize;" href="https://repositorio.ufrn.br/bitstream/123456789/25642/1/ValdigleisDaSilvaCosta_DISSERT.pdf" target="_blank">Linguagens Lineares <em>Fuzzy</em></a>
+			            </td>
+			            <td>05 Ago. 2016</td>
+		          	</tr>
+				</table>
+
+				<h5><em>Últimos Papers</em></h5>
+				<table class="selected">
+					<thead>
+			            <tr>
+			            	<th><em>Status</em></th>
+			            	<th>Título e membros do trabalho.</th>
+			            </tr>
+			        </thead>
+			        <tr>
+			            <td>Submetido</td>
+			            <td>
+			              <a>On Typical Hesitant Fuzzy Languages and Automata</a>
+			              <span class="authors">Valdigleis S. Costa, Benjamín Bedregal e Regivan Santiago</span>
+			            </td>
+		          	</tr>
+		          	<tr>
+			            <td>Publicado</td>
+			            <td>
+			              <a href="https://doi.org/10.1016/j.fss.2020.09.012" target="_blank">On closure properties of &#x2112;-valued linear languages</a>
+			              <span class="authors">Valdigleis S. Costa, Benjamín Bedregal e Regivan Santiago</span>
+			            </td>
+		          	</tr>
+		          	<tr>
+			            <td>Publicado</td>
+			            <td>
+			              <a href="https://doi.org/10.1007/s00500-020-04896-7" target="_blank">On typical hesitant fuzzy automata</a>
+			              <span class="authors">Valdigleis S. Costa e Benjamín Bedregal</span>
+			            </td>
+		          	</tr>
+		          	<tr>
+		          		<td>Publicado</td>
+		          		<td>
+		          			<a href="https://doi.org/10.5540/tema.2018.019.01.127" target="_blank">Fuzzy Linear Automata and Some Equivalences</a>
+		          			<span>Valdigleis S. Costa e Benjamín Bedregal</span>
+		          		</td>
+		          	</tr>
+		          	<tr>
+		          		<td>Publicado</td>
+		          		<td>
+		          			<a href="https://doi.org/10.1016/j.neucom.2018.06.021" target="">Combining multiple algorithms in classifier ensembles using generalized mixture functions</a>
+		          			<span>Valdigleis S. Costa, Antônio Diego S Farias, Benjamín Bedregal, Regivan Santiago e Anne Magaly de P Canuto</span>
+		          		</td>Material Theme
+		          	</tr>
+		          	<tr>
+			            <td colspan="2" class="rest"><a href="papers.html">... Lista Completa ...</a></td>
+			        </tr>
+
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<hr/>
+
+	<!-- Rodapé da página-->
+	<div class="container">
+		<div class="row">
+			<p style="align-items: cenMaterial Themeter; text-align: center;">
+				Copyright © 2021 Profº Valdigleis S. Costa <br> 
+				<strong> 
+					<script type="text/JavaScript" language="JavaScript">
+						document.write("Atualizado em: " + getDataModificacao());
+					</script>
+				</strong> 
+			</p>
+		</div>
+	</div>  
+
+</body>
+</html>

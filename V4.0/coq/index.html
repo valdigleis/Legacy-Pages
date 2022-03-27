@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Interface Coq-Web</title>
+
+    
+    <script src="../node_modules/jscoq/ui-js/jscoq-loader.js"></script>
+
+    <!-- Favicon -->
+		<link rel="icon" type="image/ico" href="../images/favicon.ico">
+  </head>
+
+<body class="jscoq-main">
+  <div id="ide-wrapper" class="toggled">
+    <div id="code-wrapper">
+      <div id="document">
+        <h1>Sobre Coq</h1>
+        <p style="text-align: justify;">
+          Coq é um sistema para prova de teoremas interativo. Ele permite a expressão de asserções 
+          matemáticas, verifica mecanicamente as provas destas asserções, auxilia a encontrar provas 
+          formais e extrai um programa certificado a partir da prova construtiva de sua especificação
+          formal.  Coq trabalha dentro da teoria de construções indutivas, uma teoria derivada do
+          cálculo de  construções.
+        </p>
+        <textarea id="coq-code">(* Escreva seu Coq code aqui!!! *)</textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Configurações para o jsCoq -->
+  <script type="text/javascript">
+
+    var jscoq_ids  = ['coq-code'];
+    var jscoq_opts = {
+        prelude:       true,
+        implicit_libs: true,
+        base_path:     '../node_modules/jscoq/',
+        editor:        { mode: { 'company-coq': true }, keyMap: 'default' },
+        init_pkgs:     ['init'],
+        all_pkgs:      ['coq', 'mathcomp', 'elpi', 'equations', 'extlib', 'simpleio', 'quickchick', 
+ 'software-foundations', 'hahn', 'paco', 'snu-sflib', 'promising']
+
+    };
+
+    JsCoq.start(jscoq_opts.base_path, '../node_modules', jscoq_ids, jscoq_opts);
+    
+  </script>
+
+</body>

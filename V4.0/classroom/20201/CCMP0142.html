@@ -1,0 +1,480 @@
+<!--
+	MIT License
+
+	Copyright (c) 2021 Valdigleis
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE. 
+-->
+<!DOCTYPE html>
+<html lang=”pt-br”>
+
+	<head>
+		<!-- Basic Page infos -->
+		<meta charset="utf-8">
+		<title>CCMP0142-2020.1</title>
+		
+		<meta name="description" content="Profº Valdigleis S Costa's home page.">
+		<meta name="author" content="Valdigleis S Costa">
+
+		<!-- Mobile Specific Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Import font -->
+		<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
+		<!-- Import font -->
+		<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../../css/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/ico" href="../../images/favicon.ico">
+
+		<!-- Funções usadas na exibição da data de última modificação -->
+		<script type="text/JavaScript" language="JavaScript">
+			
+			function construir_data(date){
+				var d = date.getDate();
+				var m = date.getMonth() + 1;
+				var y = date.getYear();
+
+				var mmm = 
+				(1==m)?'Janeiro':( 2==m)?'Fev':(3==m)?'Mar':
+				(4==m)?'Abr':( 5==m)?'Mai':(6==m)?'Jun':
+				(7==m)?'Jul':( 8==m)?'Ago':(9==m)?'Set':
+				(10==m)?'Out':(11==m)?'Nov':'Dezembro';
+
+				return "" + (d<10?"0"+d:d) + " de " + mmm + " de " +  (2000+y-100);
+			}
+
+			function getDataModificacao(){
+				var lmd = document.lastModified;
+				var s = "Desconhecida";
+				var d1;
+				if(0 != (d1=Date.parse(lmd))){
+					s = "" + construir_data(new Date(d1));
+				}
+				return s;
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- Cabeçalho -->
+		<div class="container header" id="header">
+			<div class="row">
+				<div id="info" class="nine columns">
+					<h1><strong>CCMP0142&ndash;2020.1</strong></h1>
+					<h5>Lógica para Ciência da Computação</h5>
+					<span>Turma: C2</span><br>
+					<span>Professores: <a href="http://www.profvaldi.site/">Profº Valdigleis</a> e <a href="">Profª Débora</a></span><br>
+					<span>Seção 01: Seg. 10:00am&ndash;12:00am na plataforma <a href=""><em>Google Meet</em>.</a></span><br>
+					<span>Seção 02: Qua. 08:00am&ndash;10:00am na plataforma <a href=""><em>Google Meet</em>.</a></span>
+				</div>
+				<div id="links" class="three columns">
+					<h3><a href="../../index.html">Página Inicial</a></h3>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- Conteúdo -->
+		<div class="container" id="content">
+			<!-- A ementa do curso -->
+			<div class="row">
+				<div class="six columns">
+					<h5>Ementa do curso</h5>
+					<blockquote>
+						<p style="text-align: justify;">Lógica Proposicional: sintaxe e semântica, métodos de resolução, sistemas formais da Lógica Proposicional. Lógica de Predicados: sintaxe e semântica, interpretação das variáveis, funções e predicados, equivalência entre fórmulas, métodos de resolução, sistemas formais da Lógica de Predicados. Programação em Lógica: Introdução, cláusulas de Horn, resolvente e unificação, SLD derivação e refutação. Lógicas não clássicas: modais, multivalorada, temporal e não monotônica.</p>
+					</blockquote>
+					<h5>Pré-requisitos</h5>
+					<blockquote>
+						<p>Matemática Discreta (CCMP0133)</p>
+					</blockquote>
+				</div>
+				<div class="six columns">
+					<h5>Referências Bibliográficas</h5>
+					<ul>
+						<li><a href="https://www.google.com.br/books/edition/Logica_Para_Ciencia_Da_Computa%C3%A7ao/Y8GEsUoRKiEC?hl=pt-BR&gbpv=0" target="_blank">DE SOUZA, João Nunes. Lógica para Ciência da Computação. Elsevier Brasil, 2008.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Introdu%C3%A7%C3%A3o_%C3%A0_l%C3%B3gica/6iS4_QGZzHAC?kptab=editions&sa=X&ved=2ahUKEwijqsWW_L_zAhUQlJUCHQkDBBIQmBZ6BAgFEAk" target="_blank">MORTARI, Cezar A. Introdução à lógica. Unesp, 2001.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Introducao_a_Logica_Para_a_Ciencia_Da_Co/AgBJdjoNPwUC?hl=pt-BR&gbpv=0" target="">ABE, Jair Minoro. Introdução à Lógica para a Ciência da Computação. Arte & Ciência, 2002.</a></li>
+						<li>HEGENBERG, Leônidas. Lógica: Cálculo Sentencial, Cálculo de Predicados, Cálculo com Igualdades. Mestre Jou, 1981.</li>
+					</ul>
+					<h5>Referências Complementares</h5>
+					<ul>
+						<li><a href="https://www.google.com.br/books/edition/Logic_and_Structure/TcqCMAEACAAJ?hl=pt-BR" target="_blank">VAN DALEN, Dirk; VAN DALEN, Dirk. Logic and structure. Berlin: Springer, 1994.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Language_Proof_and_Logic/we4YAQAAIAAJ?hl=pt-BR&gbpv=0&bsq=Language,%20Proof%20and%20Logic" target="_blank">BARWISE, Jon et al. Language, proof and logic. CSLI publications, 2000.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Fundamentos_matematicos_para_a_ciencia_d/2eVgAAAACAAJ?hl=pt-BR" target="_blank">GERSTING, Judith L. Fundamentos matemáticos para a ciência da computação. LTC, 2001.</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="twelve columns">
+					<table class="selected">
+						<thead><th>Nº</th><th>Observações</th></thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td style="text-align: justify;">
+									Além das referências complementares apresentadas acima também está disponível as notas de aula do Profº Valdigleis compiladas na forma de um único manuscrito, que pode ser obtido de duas formas: via <a style="cursor: s-resize;" href="../../files/Livro-FMC.pdf">pdf</a>  ou (mais recomendado) através de clone do repositório <a href="https://github.com/valdigleis/Livro-FMC" target="_blank">git</a>.
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td style="text-align: justify;">
+									Devido a problemas como o servidor e com os <em>backup's</em> os arquivos das lâminas das aulas e os arquivos dos exercícios infelizmente foram perdidos
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- Descrição das aulas -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Encontros</strong></h4>
+					<div class="ten columns">
+						<table class="selected" >
+							<thead><th>Nº</th><th>Data</th><th>Tópico</th><th>Sala</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										01/03
+									</td>
+									<td>
+										Conceitos básicos (proposições, linguagem proposicional)
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										2
+									</td>
+									<td>
+										03/03
+									</td>
+									<td>
+										Lógica proposicional: Sistema Dedutivo
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										3
+									</td>
+									<td>
+										08/03
+									</td>
+									<td>
+										Lógica proposicional: Sistema Semântico
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										4
+									</td>
+									<td>
+										10/03
+									</td>
+									<td>
+										Teorias formais da lógica proposicional
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										5
+									</td>
+									<td>
+										15/03
+									</td>
+									<td>
+										Métodos de Resolução da lógica proposicional
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										6
+									</td>
+									<td>
+										17/03
+									</td>
+									<td>
+										Teorias formais da lógica proposicional
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										7
+									</td>
+									<td>
+										22/03
+									</td>
+									<td>
+										Lean Prover Theorem (Aula 1)
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										8
+									</td>
+									<td>
+										24/03
+									</td>
+									<td>
+										Lean Prover Theorem (Aula 2)
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										9
+									</td>
+									<td>
+										29/03
+									</td>
+									<td>
+										Lógica de Predicados: Linguagem, Sistema Dedutivo, Sistema Semântico I
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										10
+									</td>
+									<td>
+										31/03
+									</td>
+									<td>
+										Lógica de Predicados: Linguagem, Sistema Dedutivo, Sistema Semântico II
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										11
+									</td>
+									<td>
+										05/04
+									</td>
+									<td>
+										Teorias Formais da Lógica de Predicados I
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										12
+									</td>
+									<td>
+										07/04
+									</td>
+									<td>
+										Teorias Formais da Lógica de Predicados II
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										13
+									</td>
+									<td>
+										12/04
+									</td>
+									<td>
+										Métodos de resolução da lógica de predicados I
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										14
+									</td>
+									<td>
+										14/04
+									</td>
+									<td>
+										Métodos de resolução da lógica de predicados II
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										15
+									</td>
+									<td>
+										19/04
+									</td>
+									<td>
+										Lean Prover Theorem (Aula 3)
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										16
+									</td>
+									<td>
+										21/04
+									</td>
+									<td>
+										Revisão
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										17
+									</td>
+									<td>
+										26/04
+									</td>
+									<td>
+										Atividade Avaliativa I
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+						            <td colspan="5" class="rest">As demais aulas foram de responsabilidade da <a href="http://lattes.cnpq.br/7398012565477976" target="_blank">profª Débora</a></td>
+						        </tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Descrição das atividades
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Atividades</strong></h4>
+					<div class="eleven columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Posted</th><th>Deadline</th><th>Tópicos</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										dd/mm
+									</td>
+									<td>
+										dd/mm
+									</td>
+									<td>
+										Conteúdo do tópico lecionado
+									</td>
+									<td>
+										Qualquer observação que seja necessária
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+
+	</body>
+
+	<hr/>
+
+	<!-- Rodapé da página-->
+	<div class="container">
+		<div class="row">
+			<p style="align-items: center; text-align: center;">
+				Copyright © 2021 Profº Valdigleis S. Costa <br> 
+				<strong> 
+					<script type="text/JavaScript" language="JavaScript">
+						document.write("Atualizado em: " + getDataModificacao());
+					</script>
+				</strong> 
+			</p>
+		</div>
+	</div>
+
+</html>

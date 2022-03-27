@@ -1,0 +1,259 @@
+<!--
+	MIT License
+
+	Copyright (c) 2021 Valdigleis
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE. 
+-->
+<!DOCTYPE html>
+<html lang=”pt-br”>
+<head>
+	<!-- Basic Page infos -->
+	<meta charset="utf-8">
+	<title>Profº Valdigleis</title>
+	
+	<meta name="description" content="Profº Valdigleis S Costa's home page.">
+	<meta name="author" content="Valdigleis S Costa">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Import font -->
+	<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
+	<!-- Import font -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/ico" href="images/favicon.ico">
+
+	<!-- Funções usadas na exibição da data de última modificação -->
+	<script type="text/JavaScript" language="JavaScript">
+		
+		function construir_data(date){
+			var d = date.getDate();
+			var m = date.getMonth() + 1;
+			var y = date.getYear();
+
+			var mmm = 
+			(1==m)?'Janeiro':( 2==m)?'Fev':(3==m)?'Mar':
+			(4==m)?'Abr':( 5==m)?'Mai':(6==m)?'Jun':
+			(7==m)?'Jul':( 8==m)?'Ago':(9==m)?'Set':
+			(10==m)?'Out':(11==m)?'Nov':'Dezembro';
+
+			return "" + (d<10?"0"+d:d) + " de " + mmm + " de " +  (2000+y-100);
+		}
+
+		function getDataModificacao(){
+			var lmd = document.lastModified;
+			var s = "Desconhecida";
+			var d1;
+			if(0 != (d1=Date.parse(lmd))){
+				s = "" + construir_data(new Date(d1));
+			}
+			return s;
+		}
+	</script>
+</head>
+
+
+	<div class="container header">
+      <div class="row">
+        <div class="five columns">
+          <h1>Lista de <em>Papers</em></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="five columns">
+          <h4><a href="index.html">Profº Valdigleis S Costa</a></h4>
+        </div>
+        <div class="seven columns explanation">
+          <p>
+          	Os <em>Papers</em> estão listados em ordem cronológica (inversa) de desenvolvimento da pesquisa, assim os artigos mais acima na lista são os mais recentes.
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="container papers">
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title nine columns">
+    				<strong>On Typical Hesitant Fuzzy Languages and Automata</strong>
+    			</div>
+    			<div class="venue three columns">Submetido</div>
+    		</div>
+    		<div class="row">
+	          <div class="authors six columns">Valdigleis S. Costa, Benjamín Bedregal e Regivan Santiago</div>
+	          <div class="downloads six columns">
+	            <a href="bib/">bib</a>
+	          </div>
+	        </div>
+	        <!--
+	        <div class="row">
+	          <div class="notes twelve columns">
+	          </div>
+	        </div>
+	    	-->
+    	</div>
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title nine columns">
+    				<strong>On closure properties of &#x2112;-valued linear languages</strong>
+    			</div>
+    			<div class="venue three columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors six columns">Valdigleis S. Costa, Benjamín Bedregal e Regivan Santiago</div>
+	          <div class="downloads six columns">
+	            <a href="https://doi.org/10.1016/j.fss.2020.09.012" target="_blank">Link</a>
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title nine columns">
+    				<strong>On typical hesitant fuzzy automata</strong>
+    			</div>
+    			<div class="venue three columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors six columns">Valdigleis S. Costa e Benjamín Bedregal</div>
+	          <div class="downloads six columns">
+	          	<a href="https://doi.org/10.1007/s00500-020-04896-7" target="_blank">Link</a>
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title nine columns">
+    				<strong>Fuzzy Linear Automata and Some Equivalences</strong>
+    			</div>
+    			<div class="venue three columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors six columns">Valdigleis S. Costa e Benjamín Bedregal</div>
+	          <div class="downloads six columns">
+	          	<a href="https://doi.org/10.5540/tema.2018.019.01.127" target="_blank">Link</a>
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title ten columns">
+    				<strong>Combining multiple algorithms in classifier ensembles using generalized mixture functions</strong>
+    			</div>
+    			<div class="venue two columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors ten columns">Valdigleis S. Costa, Antônio Diego S Farias, Benjamín Bedregal, Regivan Santiago e Anne Magaly de P Canuto</div>
+	          <div class="downloads two columns">
+	          	<a href="https://doi.org/10.1016/j.neucom.2018.06.021" target="_blank">Link</a>
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title ten columns">
+    				<strong>Constructing Generalized Mixture Functions from Bounded Generalized Mixture Functions</strong>
+    			</div>
+    			<div class="venue two columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors seven columns">Antônio Diego S Farias, Valdigleis S Costa, Regivan Santiago e Benjamin Bedregal</div>
+	          <div class="downloads five columns">
+	          	<a href="https://www.researchgate.net/publication/325762529_Constructing_Generalized_Mixture_Functions_from_Bounded_Generalized_Mixture_Functions" target="_blank">PDF</a>(Resp. Profº Antônio Diego)
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title ten columns">
+    				<strong>The image reduction process based on generalized mixture functions</strong>
+    			</div>
+    			<div class="venue two columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors seven columns">Antônio Diego S Farias, Valdigleis S Costa, Regivan Santiago e Benjamin Bedregal</div>
+	          <div class="downloads five columns">
+	          	<a href="https://doi.org/10.1109/NAFIPS.2016.7851591" target="_blank">Link</a>
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+
+    	<div class="paper">
+    		<div class="row">
+    			<div class="title ten columns">
+    				<strong>A residuated function in a class of mealy type L-valued finite automaton</strong>
+    			</div>
+    			<div class="venue two columns">Publicado</div>
+    		</div>
+
+    		<div class="row">
+	          <div class="authors seven columns">Antônio Diego S Farias, Valdigleis S Costa, Regivan Santiago e Benjamin Bedregal</div>
+	          <div class="downloads five columns">
+	          	<a href="https://doi.org/10.1109/NAFIPS.2016.7851592" target="_blank">Link</a>
+	            <a href="bib/">bib</a>
+	          </div>
+    		</div>
+    	</div>
+    </div>
+
+    <hr/>
+
+	<!-- Rodapé da página-->
+	<div class="container">
+		<div class="row">
+			<p style="align-items: center; text-align: center;">
+				Copyright © 2021 Profº Valdigleis S. Costa <br> 
+				<strong> 
+					<script type="text/JavaScript" language="JavaScript">
+						document.write("Atualizado em: " + getDataModificacao());
+					</script>
+				</strong> 
+			</p>
+		</div>
+	</div>  
+
+</html>

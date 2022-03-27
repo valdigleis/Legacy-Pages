@@ -1,0 +1,693 @@
+<!--
+	MIT License
+
+	Copyright (c) 2021 Valdigleis
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE. 
+-->
+<!DOCTYPE html>
+<html lang=”pt-br”>
+
+	<head>
+		<!-- Basic Page infos -->
+		<meta charset="utf-8">
+		<title>CCMP0161</title>
+		
+		<meta name="description" content="Profº Valdigleis S Costa's home page.">
+		<meta name="author" content="Valdigleis S Costa">
+
+		<!-- Mobile Specific Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Import font -->
+		<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
+		<!-- Import font -->
+		<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../../css/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/ico" href="../../images/favicon.ico">
+
+		<!-- Funções usadas na exibição da data de última modificação -->
+		<script type="text/JavaScript" language="JavaScript">
+			
+			function construir_data(date){
+				var d = date.getDate();
+				var m = date.getMonth() + 1;
+				var y = date.getYear();
+
+				var mmm = 
+				(1==m)?'Janeiro':( 2==m)?'Fev':(3==m)?'Mar':
+				(4==m)?'Abr':( 5==m)?'Mai':(6==m)?'Jun':
+				(7==m)?'Jul':( 8==m)?'Ago':(9==m)?'Set':
+				(10==m)?'Out':(11==m)?'Nov':'Dezembro';
+
+				return "" + (d<10?"0"+d:d) + " de " + mmm + " de " +  (2000+y-100);
+			}
+
+			function getDataModificacao(){
+				var lmd = document.lastModified;
+				var s = "Desconhecida";
+				var d1;
+				if(0 != (d1=Date.parse(lmd))){
+					s = "" + construir_data(new Date(d1));
+				}
+				return s;
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- Cabeçalho -->
+		<div class="container header" id="header">
+			<div class="row">
+				<div id="info" class="nine columns">
+					<h1><strong>CCMP0161 &ndash; 2021.1</strong></h1>
+					<h5>Linguagens Formais e Autômatos</h5>
+					<span>Turma: T1</span><br>
+					<span>Professor: <a href="http://www.profvaldi.site/">Profº Valdigleis</a></span><br>
+					<span>Seção 01: Segunda-feira 08:00&ndash;10:00am no <em>Google Meet.</em></span><br>
+					<span>Seção 02: Quarta-feira 08:00&ndash;10:00am no <em>Google Meet.</em></span>
+				</div>
+				<div id="links" class="three columns">
+					<h3><a href="../../index.html">Página Inicial</a></h3>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- Conteúdo -->
+		<div class="container" id="content">
+			<!-- A ementa do curso -->
+			<div class="row">
+				<div class="six columns">
+					<h5>Ementa do curso</h5>
+					<blockquote>
+						<p style="text-align:justify;">Componentes básicos das linguagens formais: símbolo, alfabeto e cadeias. Formalização das linguagens regulares (autômatos finitos, expressões regulares, gramáticas regulares). Operações sobre linguagens regulares. Modelos para as linguagens livres de contexto (autômatos de pilha e gramáticas livres de contexto), álgebra das linguagens livres de contexto. Linguagens recursivas e máquinas de Turing. Hierarquia de Chomsky e classes de linguagens. Linguagens recursivamente enumeráveis. Introdução a computabilidade e a Decidibilidade.</p>
+					</blockquote>
+					<h5>Pré-requisitos</h5>
+					<blockquote>
+						<p>Matemática Discreta (CCMP0133)</p>
+					</blockquote>
+				</div>
+				<div class="six columns">
+					<h5>Referências Bibliográficas</h5>
+					<ul>
+						<li>ACIÓLY, Benedito Melo; BEDREGAL, Benjamín René Callejas; LYRA, Aarão. Introdução à teoria das linguagens formais, dos autômatos e da computabilidade. Natal: Edições UnP, 2002.</li>
+						<li><a href="https://www.google.com.br/books/edition/_/21uXNAEACAAJ?hl=pt-BR&sa=X&ved=2ahUKEwjkpNDIu670AhXsrpUCHX-nBS0Qre8FegQIGBAI" target="_blank">HOPCROFT, John E. Introduction to automata theory, languages, and computation. Pearson Education India.  Addison-Wesley, 2007.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Introdu%C3%A7%C3%A3o_%C3%A0_teoria_da_computa%C3%A7%C3%A3o/aS2aPgAACAAJ?hl=pt-BR">SIPSER, Michael. Introdução à teoria da computação. Thomson Learning, 2007.</a></li>
+					</ul>
+					<h5>Referências Complementares</h5>
+					<ul>
+						<li><a href="https://www.google.com.br/books/edition/Linguagens_Formais_Teoria_Modelagem_e_Im/sBioPgAACAAJ?hl=pt-BR" target="_blank">RAMOS, Marcus Vinícius Midena; NETO, João José; VEJA, Ítalo Santiago. Linguagens formais: teoria, modelagem e implementação. Bookman Editora, 2009.</a></li>
+						<li>EILENBERG, Samuel. Automata, languages, and machines. Academic press, 1974.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="twelve columns">
+					<table class="selected">
+						<thead><th>Nº</th><th>Observações</th></thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td style="text-align: justify;">
+									Além das referências complementares apresentadas acima também está disponível as notas de aula do Profº Valdigleis compiladas na forma de um único manuscrito, que pode ser obtido de duas formas: via <a style="cursor: s-resize;" href="../../files/Livro-FMC.pdf">pdf</a>  ou (mais recomendado) através de clone do repositório <a href="https://github.com/valdigleis/Livro-FMC" target="_blank">git</a>.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Descrição das aulas -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Encontros (Aulas)</strong></h4>
+					<div class="eleven columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Data</th><th>Tópicos</th><th>Sala</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										24/11
+									</td>
+									<td>
+										Apresentação da Disciplina
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										2
+									</td>
+									<td>
+										29/11
+									</td>
+									<td>
+										Noções fundamentais Alfabeto, Palavras, Comprimento de Palavras, Fechos sobre Alfabetos, Linguagens.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>
+										3
+									</td>
+									<td>
+										01/12
+									</td>
+									<td>
+										<!--<a style="cursor: s-resize;" href="../../files/2021.1/LF/Encontro3.pdf"></a> -->
+										Autômatos Finitos Determinísticos.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										4
+									</td>
+									<td>
+										06/12
+									</td>
+									<td>
+										Autômatos Finitos Não-determinísticos.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										5
+									</td>
+									<td>
+										08/12
+									</td>
+									<td>
+										Determinismo &#xd7; Não-determinismo &#xd7; Minimização.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										6
+									</td>
+									<td>
+										13/12
+									</td>
+									<td>
+										Expressões Regulares.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										7
+									</td>
+									<td>
+										15/12
+									</td>
+									<td>
+										Gramáticas Regulares.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										8
+									</td>
+									<td>
+										20/12
+									</td>
+									<td>
+										Formas Normais para Gramáticas Regulares.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										9
+									</td>
+									<td>
+										22/12
+									</td>
+									<td>
+										Gramáticas Regulares e Autômatos Finitos.
+									</td>
+									<td>
+										<a href="https://meet.google.com/zgj-bssk-xpe" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										10
+									</td>
+									<td>
+										10/01
+									</td>
+									<td>
+										Álgebra das linguagens regulares.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										11
+									</td>
+									<td>
+										12/01
+									</td>
+									<td>
+										Primeira Atividade Avaliativa.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										12
+									</td>
+									<td>
+										17/01
+									</td>
+									<td>
+										Gramática Livres de Contexto.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										13
+									</td>
+									<td>
+										19/01
+									</td>
+									<td>
+										Simplificação das Gramáticas Livres de Contexto.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										14
+									</td>
+									<td>
+										24/01
+									</td>
+									<td>
+										Formas Normais para Gramáticas Livres de Contexto.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										15
+									</td>
+									<td>
+										26/01
+									</td>
+									<td>
+										Autômatos de Pilha Determinísticos e Não-determinísticos.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										16
+									</td>
+									<td>
+										31/01
+									</td>
+									<td>
+										A relação computacional entre Pilha &#xd7; Determinísmo e Pilha &#xd7; Não-determinísticos.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										17
+									</td>
+									<td>
+										02/02
+									</td>
+									<td>
+										Gramáticas Livres de Contexto e Autômatos de Pilha 
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										18
+									</td>
+									<td>
+										07/02
+									</td>
+									<td>
+										Lambda-Transições x Não-determinismo explícito
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										19
+									</td>
+									<td>
+										09/02
+									</td>
+									<td>
+										Álgebra das linguagens regulares.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										20
+									</td>
+									<td>
+										14/02
+									</td>
+									<td>
+										Segunda Atividade Avaliativa.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										21
+									</td>
+									<td>
+										16/02
+									</td>
+									<td>
+										Máquinas de Turing.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										22
+									</td>
+									<td>
+										21/02
+									</td>
+									<td>
+										Composição de Máquinas de Turing.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										23
+									</td>
+									<td>
+										23/02
+									</td>
+									<td>
+										Variações da Máquina de Turing.
+									</td>
+									<td>
+										<a href="https://meet.google.com/myx-nrvx-icz" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										24
+									</td>
+									<td>
+										07/03
+									</td>
+									<td>
+										A Máquina universal e a tese de Church.
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										25
+									</td>
+									<td>
+										09/03
+									</td>
+									<td>
+										Linguagens Recursiva e Recursivamente Enumeráveis
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										26
+									</td>
+									<td>
+										14/03
+									</td>
+									<td>
+										Gramáticas e Linguagens Sensíveis ao Contexto.
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										27
+									</td>
+									<td>
+										16/03
+									</td>
+									<td>
+										Hierarquia de Chomsky e Classe de Complexidade.
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										28
+									</td>
+									<td>
+										21/03
+									</td>
+									<td>
+										Limites da Computação Problemas indecidíveis.
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										29
+									</td>
+									<td>
+										23/03
+									</td>
+									<td>
+										Limites da Computação Problemas e Níveis de Decidibilidade.
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										30
+									</td>
+									<td>
+										28/03
+									</td>
+									<td>
+										Terceira Atividade Avaliativa.
+									</td>
+									<td>
+										<a href="https://meet.google.com/vyj-evfr-wtg" target="_blank">Meet</a> 
+									</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Descrição das atividades -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Atividades</strong></h4>
+					<div class="eleven columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Posted</th><th>Deadline</th><th>Tópicos</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										dd/mm
+									</td>
+									<td>
+										dd/mm
+									</td>
+									<td>
+										---
+									</td>
+									<td>
+										---
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<hr/>
+
+	<!-- Rodapé da página-->
+	<div class="container">
+		<div class="row">
+			<p style="align-items: center; text-align: center;">
+				Copyright © 2021 Profº Valdigleis S. Costa <br> 
+				<strong> 
+					<script type="text/JavaScript" language="JavaScript">
+						document.write("Atualizado em: " + getDataModificacao());
+					</script>
+				</strong> 
+			</p>
+		</div>
+	</div>  
+</html>

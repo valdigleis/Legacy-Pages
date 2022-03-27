@@ -1,0 +1,727 @@
+<!--
+	MIT License
+
+	Copyright (c) 2021 Valdigleis
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE. 
+-->
+<!DOCTYPE html>
+<html lang=”pt-br”>
+
+	<head>
+		<!-- Basic Page infos -->
+		<meta charset="utf-8">
+		<title>CCMP0133-2020.2</title>
+		
+		<meta name="description" content="Profº Valdigleis S Costa's home page.">
+		<meta name="author" content="Valdigleis S Costa">
+
+		<!-- Mobile Specific Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Import font -->
+		<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
+		<!-- Import font -->
+		<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../../css/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/ico" href="../../images/favicon.ico">
+
+		<!-- Funções usadas na exibição da data de última modificação -->
+		<script type="text/JavaScript" language="JavaScript">
+			
+			function construir_data(date){
+				var d = date.getDate();
+				var m = date.getMonth() + 1;
+				var y = date.getYear();
+
+				var mmm = 
+				(1==m)?'Janeiro':( 2==m)?'Fev':(3==m)?'Mar':
+				(4==m)?'Abr':( 5==m)?'Mai':(6==m)?'Jun':
+				(7==m)?'Jul':( 8==m)?'Ago':(9==m)?'Set':
+				(10==m)?'Out':(11==m)?'Nov':'Dezembro';
+
+				return "" + (d<10?"0"+d:d) + " de " + mmm + " de " +  (2000+y-100);
+			}
+
+			function getDataModificacao(){
+				var lmd = document.lastModified;
+				var s = "Desconhecida";
+				var d1;
+				if(0 != (d1=Date.parse(lmd))){
+					s = "" + construir_data(new Date(d1));
+				}
+				return s;
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- Cabeçalho -->
+		<div class="container header" id="header">
+			<div class="row">
+				<div id="info" class="nine columns">
+					<h1><strong>CCMP0133&ndash;2020.2</strong></h1>
+					<h5>Matemática Discreta</h5>
+					<span>Turma: T1</span><br>
+					<span>Professor: <a href="http://www.profvaldi.site/">Profº Valdigleis</a></span><br>
+					<span>Seção 01: Qua. 10:00am&ndash;12:00am através do <a href="">Meet</a></span><br>
+					<span>Seção 02: Sex. 02:00pm&ndash;04:00pm através do <a href="">Meet</a></span><br>
+				</div>
+				<div id="links" class="three columns">
+					<h3><a href="../../index.html">Página Inicial</a></h3>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- Conteúdo -->
+		<div class="container" id="content">
+			<!-- A ementa do curso -->
+			<div class="row">
+				<div class="six columns">
+					<h5>Ementa do curso</h5>
+					<blockquote>
+						<p style="text-align: justify;">Introdução à Lógica Formal. Métodos de demonstração. Teoria ingênua dos conjuntos. Relações e funções. Ordem e equivalência. Cardinalidade. Indução. Estruturas algébricas. Reticulados e álgebras booleanas. Indução. Recursividade e Relações de Recorrência.</p>
+					</blockquote>
+					<h5>Pré-requisitos</h5>
+					<blockquote>
+						<p>Não possui!</p>
+					</blockquote>
+				</div>
+				<div class="six columns">
+					<h5>Referências Bibliográficas</h5>
+					<ul>
+						<li><a href="https://www.google.com.br/books/edition/Fundamentos_matematicos_para_a_ciencia_d/2eVgAAAACAAJ?hl=pt-BR" target="_blank">GERSTING, Judith L. Fundamentos matemáticos para a ciência da computação. LTC, 2001.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Teoria_ingenua_dos_conjuntos/ZlPAQwAACAAJ?hl=pt-BR" target="_blank">HALMOS, Paul R. Teoria ingênua dos conjuntos. Editora Ciência Moderna, 2001.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Teoria_ingenua_dos_conjuntos/ZlPAQwAACAAJ?hl=pt-BR" target="_blank">PAPAVERO, Nelson; ABE, Jair Minoro. Categorias do ser e biologia. Estudos Avançados, v. 6, p. 143-156, 1992.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Teoria_dos_conjuntos/SmVUngEACAAJ?hl=pt-BR" target="_blank">LIPSCHUTZ, Seymour; DA SILVA, Fernando Vilain Heusi. Teoria dos conjuntos. 1967.</a></li>
+					</ul>
+					<h5>Referências Complementares</h5>
+					<ul>
+						<li>CARMO, José; GOUVEIA, Paula; Dionísio, Francisco Miguel; Elementos de Matemática Discreta, 1ª edição.</li>
+						<li><a href="https://www.google.com.br/books/edition/Sets_Logic_and_Maths_for_Computing/PPi9nvZAy8AC?hl=pt-BR&gbpv=0" target="_blank">MAKINSON, D.; Sets, Logic and Maths for Computing, 2nd edition, Springer, 2012.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Fundamentos_matematicos_para_a_ciencia_d/2eVgAAAACAAJ?hl=pt-BR" target="_blank">GERSTING, Judith L. Fundamentos matemáticos para a ciência da computação. LTC, 2001.</a></li>
+						<li><a href="https://www.google.com.br/books/edition/Discrete_Mathematics_with_Applications/iTudDAEACAAJ?hl=pt-BR" target="_blank">EPP, S. S.; Discrete Mathematics with Applications, 3rd edition, Brooks Cole, 2003</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="twelve columns">
+					<table class="selected">
+						<thead><th>Nº</th><th>Observações</th></thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td style="text-align: justify;">
+									Além das referências complementares apresentadas acima também está disponível as notas de aula do Profº Valdigleis compiladas na forma de um único manuscrito, que pode ser obtido de duas formas: via <a href="../../files/Livro-FMC.pdf">pdf</a>  ou (mais recomendado) através de clone do repositório <a href="https://github.com/valdigleis/Livro-FMC" target="_blank">git</a>.
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td style="text-align: justify;">
+									Devido a problemas como o servidor e com os <em>backup's</em> os arquivos das lâminas das aulas e os arquivos dos exercícios infelizmente foram perdidos
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- Descrição das aulas -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Encontros (Aulas)</strong></h4>
+					<div class="ten columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Data</th><th>Tópicos</th><th>Sala</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										14/07
+									</td>
+									<td>
+										Teoria Intuitiva de Conjuntos: conjuntos e operações sobre conjuntos.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										2
+									</td>
+									<td>
+										16/07
+									</td>
+									<td>
+										Introdução à lógica formal: proposições, predicado e conectivos.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										3
+									</td>
+									<td>
+										21/07
+									</td>
+									<td>
+										Lógica formal: semântica e valoração.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										4
+									</td>
+									<td>
+										23/07
+									</td>
+									<td>
+										Lógica formal: sintaxe e inferência.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										5
+									</td>
+									<td>
+										28/07
+									</td>
+									<td>
+										Métodos de demonstração (1).
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										6
+									</td>
+									<td>
+										30/07
+									</td>
+									<td>
+										Métodos de demonstração (2).
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										7
+									</td>
+									<td>
+										04/08
+									</td>
+									<td>
+										Produto cartesiano
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										8
+									</td>
+									<td>
+										06/08
+									</td>
+									<td>
+										Relações binárias e n&ndash;árias, propriedades das relações binárias.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										9
+									</td>
+									<td>
+										11/08
+									</td>
+									<td>
+										Relações: composição e fechos das relações.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										10
+									</td>
+									<td>
+										13/08
+									</td>
+									<td>
+										Funções: assinatura e formalização de funções, propriedades básicas de funções.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										11
+									</td>
+									<td>
+										18/08
+									</td>
+									<td>
+										Funções: operações conjuntistas sobre funções, composição de funções, funções compatíveis.  
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										12
+									</td>
+									<td>
+										20/08
+									</td>
+									<td>
+										Funções: sequências, famílias indexadas.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										13
+									</td>
+									<td>
+										25/08
+									</td>
+									<td>
+										Ordem: ordens parciais, conjuntos parcialmente ordenados, ordem totais, conjuntos totalmente ordenados, funções monótonas.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										14
+									</td>
+									<td>
+										27/08
+									</td>
+									<td>
+										Ordem: elementos máximos, mínimos, maximais, minimais, majorantes, minorantes, cotas.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										15
+									</td>
+									<td>
+										01/09
+									</td>
+									<td>
+										Equivalência: relações de equivalência, classes de equivalência, espaço quociente, propriedades.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										16
+									</td>
+									<td>
+										03/09
+									</td>
+									<td>
+										Cardinalidade: conjuntos finitos e infinitos, números cardinais.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										17
+									</td>
+									<td>
+										08/09
+									</td>
+									<td>
+										Indução matemática.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										18
+									</td>
+									<td>
+										10/09
+									</td>
+									<td>
+										Estruturas e conjuntos indutivamente gerados.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										19
+									</td>
+									<td>
+										15/09
+									</td>
+									<td>
+										Recursão e relações de recorrência.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										20
+									</td>
+									<td>
+										17/09
+									</td>
+									<td>
+										<strong>Primeira avaliação</strong>
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										21
+									</td>
+									<td>
+										22/09
+									</td>
+									<td>
+										&Sigma;-Assinatura, &Sigma;-álgebras, a relação entre linguagens e &Sigma;-álgebras, homomorfismos.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										22
+									</td>
+									<td>
+										24/09
+									</td>
+									<td>
+										Classes equacionais, &Sigma;-Domínios.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										23
+									</td>
+									<td>
+										29/09
+									</td>
+									<td>
+										Semigrupos, monoides e grupos.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										24
+									</td>
+									<td>
+										1/10
+									</td>
+									<td>
+										Aneis e corpos. 
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										25
+									</td>
+									<td>
+										6/10
+									</td>
+									<td>
+										Introdução aos reticulados.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										26
+									</td>
+									<td>
+										8/10
+									</td>
+									<td>
+										Reticulados limitados e distributivos.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+
+								<tr>
+									<td>
+										27
+									</td>
+									<td>
+										13/10
+									</td>
+									<td>
+										Filtros e ideias.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										28
+									</td>
+									<td>
+										15/10
+									</td>
+									<td>
+										Funções residuadas e reticulados residuados.  
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										29
+									</td>
+									<td>
+										20/10
+									</td>
+									<td>
+										Álgebras booleanas.
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>
+										30
+									</td>
+									<td>
+										22/10
+									</td>
+									<td>
+										<strong>Segunda avaliação</strong>
+									</td>
+									<td>
+										Meet
+									</td>
+									<td></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Descrição das atividades -->
+		<div class="container work">
+			<div class="row">
+				<div class="twelve columns">
+					<h4 style="text-align: center;"><strong>Atividades</strong></h4>
+					<div class="eleven columns">
+						<table class="selected" >
+							<thead><th >Nº</th><th>Posted</th><th>Deadline</th><th>Tópicos</th><th>Observações</th></thead>
+							<tbody>
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										10/09
+									</td>
+									<td>
+										10/09
+									</td>
+									<td>
+										Todos os conteúdos Apresentados entre os encontros 1 e 13.
+									</td>
+									<td>
+										Primeira avaliação
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										1
+									</td>
+									<td>
+										22/10
+									</td>
+									<td>
+										22/10
+									</td>
+									<td>
+										Todos os conteúdos Apresentados entre os encontros 14 e 29.
+									</td>
+									<td>
+										Segunda avaliação
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<hr/>
+
+	<!-- Rodapé da página-->
+	<div class="container">
+		<div class="row">
+			<p style="align-items: center; text-align: center;">
+				Copyright © 2021 Profº Valdigleis S. Costa <br> 
+				<strong> 
+					<script type="text/JavaScript" language="JavaScript">
+						document.write("Atualizado em: " + getDataModificacao());
+					</script>
+				</strong> 
+			</p>
+		</div>
+	</div>
+</html>
